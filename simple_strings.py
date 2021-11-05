@@ -22,3 +22,11 @@ def transform_to_kebab_case(text):
 def transform_to_camel_case(text):
   """Example: hello world -> helloWorld"""
   return ''.join(map(lambda word: word.capitalize(), text.strip().split(' '))))
+
+    
+def convert_to_two_decimals(number: float):
+    return float("{:.2f}".format(number))
+
+
+def convert_to_two_decimals_string(number: str):
+    return "{:.2f}".format(number)
