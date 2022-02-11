@@ -13,4 +13,6 @@ transform_to_snake_case(text)
 transform_to_kebab_case(text)
 
 transform_to_camel_case(text)
+
+remove_accents(raw_text)
 ```
