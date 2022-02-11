@@ -30,3 +30,31 @@ def convert_to_two_decimals(number: float):
 
 def convert_to_two_decimals_string(number: str):
     return "{:.2f}".format(number)
+
+
+def remove_accents(raw_text):
+    """Removes common accent characters."""
+    import re
+    import functools
+    sustitutions = {
+        "[àáâãäå]": "a",
+        "[ÀÁÂÃÄÅ]": "A",
+        "[èéêë]": "e",
+        "[ÈÉÊË]": "E",
+        "[ìíîï]": "i",
+        "[ÌÍÎÏ]": "I",
+        "[òóôõö]": "o",
+        "[ÒÓÔÕÖ]": "O",
+        "[ùúûü]": "u",
+        "[ÙÚÛÜ]": "U",
+        "[ýÿ]": "y",
+        "[ÝŸ]": "Y",
+        "[ß]": "ss",
+        "[ñ]": "n",
+        "[Ñ]": "N",
+    }
+    return functools.reduce(
+        lambda text, key: re.sub(key, sustitutions[key], text),
+        sustitutions.keys(),
+        raw_text,
+    )
